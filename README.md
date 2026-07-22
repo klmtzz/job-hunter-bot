@@ -1,8 +1,14 @@
 # 🤖 Autonomous AI-Agent Job Search Orchestrator
 
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![AsyncIO](https://img.shields.io/badge/async-asyncio%20%7C%20httpx-green.svg)](https://docs.python.org/3/library/asyncio.html)
+[![Aiogram v3](https://img.shields.io/badge/telegram-aiogram%20v3-blue.svg)](https://docs.aiogram.dev/)
+[![Docker](https://img.shields.io/badge/docker-ready-blue.svg)](https://www.docker.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 An advanced, production-grade asynchronous pipeline designed to crawl job boards, execute concurrent multi-source parsing, evaluate positions using semantic LLM-based analysis, and dispatch notifications to Telegram channels.
 
-This project is a showcase of high-quality **asynchronous Python architecture**, demonstrating clean software engineering, database optimizations, and integrations with Large Language Models.
+This project is a showcase of high-quality **asynchronous Python architecture**, demonstrating clean software engineering, database optimizations, containerized deployment, and integrations with Large Language Models.
 
 ---
 
@@ -34,7 +40,7 @@ graph TD
 ## ⚡ Core Engineering Highlights
 
 ### 1. High-Performance Asynchronous Concurrency
-* Utilizes **asyncio** and **httpx** to perform concurrent page scrapes across 15+ job boards.
+* Utilizes **asyncio** and **httpx** to perform concurrent page scrapes across multiple job boards.
 * Employs **semaphores** to enforce strict rate-limiting, preventing IP blacklists.
 * Implements **exponential backoff retry policies** to gracefully handle network issues and rate limits.
 
@@ -61,6 +67,9 @@ job-hunter-bot-showcase/
 ├── database.py          # Asynchronous parameterized database wrapper (aiosqlite)
 ├── scorer.py            # Keyword heuristic and LLM semantic match scoring engines
 ├── bot.py               # MVC architecture Telegram Bot command handlers (aiogram v3)
+├── Dockerfile           # Multi-stage production Docker container definition
+├── docker-compose.yml   # One-click Docker Compose deployment specification
+├── .env.example         # Environment configuration template
 ├── requirements.txt     # Dependency locklist
 └── parsers/             # Concurrent scraping microservices
     ├── base.py          # Abstract scraper class with retry logic & request sessions
@@ -69,47 +78,39 @@ job-hunter-bot-showcase/
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quick Start (Docker Containerized)
 
-### 📋 Prerequisites
-* Python 3.10+
-* A Telegram Bot Token (obtained from `@BotFather`)
-* An OpenAI-compatible LLM API Key (optional, for semantic analysis)
+The easiest way to run the orchestrator in production or locally is via **Docker Compose**:
 
-### 🛠️ Installation
-1. Clone the showcase repository:
-   ```bash
-   git clone https://github.com/klmtzz/job-hunter-bot-showcase.git
-   cd job-hunter-bot-showcase
-   ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/klmtzz/job-hunter-bot-showcase.git
+cd job-hunter-bot-showcase
 
-2. Create and activate a virtual environment:
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
+# 2. Configure environment variables
+cp .env.example .env
+# Edit .env with your BOT_TOKEN and TELEGRAM_CHAT_ID
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+# 3. Launch via Docker Compose
+docker-compose up -d --build
+```
 
-4. Create and populate environment variables `.env`:
-   ```env
-   BOT_TOKEN=your_telegram_bot_token
-   TELEGRAM_CHAT_ID=your_chat_id
-   POLL_INTERVAL_MINUTES=30
-   
-   # Optional: LLM Semantic Scoring Configuration
-   LLM_API_KEY=your_llm_api_key
-   LLM_BASE_URL=https://api.openai.com/v1
-   LLM_MODEL=gpt-4-turbo
-   ```
+### 🛠️ Local Python Setup (Without Docker)
 
-5. Run the orchestrator:
-   ```bash
-   python main.py
-   ```
+```bash
+# 1. Create and activate a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Copy environment configuration
+cp .env.example .env
+
+# 4. Run the orchestrator
+python main.py
+```
 
 ---
 
@@ -117,3 +118,8 @@ job-hunter-bot-showcase/
 * **Abstract Factory / Base Template:** Used in `BaseParser` to enforce schema constraints on scraper subclasses.
 * **Singleton / Global Config:** Configurations are initialized once in `config.py` and exported cleanly.
 * **Separation of Concerns (SoC):** Database manipulation, scoring algorithms, and messaging protocols are decoupled and isolated.
+
+---
+
+## 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
