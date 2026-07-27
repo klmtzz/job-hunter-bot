@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Maksim Klimavets - CV</title>
     <style>
         :root {
-            --primary: #0f172a;      /* Slate 900 */
-            --accent: #2563eb;       /* Blue 600 */
-            --text-main: #334155;    /* Slate 700 */
-            --text-muted: #64748b;   /* Slate 500 */
-            --bg-pill: #f1f5f9;      /* Slate 100 */
-            --border: #cbd5e1;       /* Slate 300 */
-            --border-light: #e2e8f0; /* Slate 200 */
+            --primary: #0f172a;       /* Dark slate */
+            --accent: #2563eb;        /* Electric Royal Blue */
+            --accent-light: #eff6ff;  /* Light Blue tint */
+            --text-main: #334155;     /* Slate 700 */
+            --text-muted: #64748b;    /* Slate 500 */
+            --bg-card: #f8fafc;       /* Slate 50 */
+            --border: #e2e8f0;        /* Slate 200 */
         }
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         
         * {
             box-sizing: border-box;
         }
         
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
             color: var(--text-main);
             margin: 0;
-            padding: 35px 40px;
-            font-size: 11.5px;
-            line-height: 1.5;
+            padding: 25px 32px;
+            font-size: 11px;
+            line-height: 1.48;
             background: white;
             width: 210mm;
             height: 297mm;
@@ -33,7 +33,7 @@
         
         @media print {
             body {
-                padding: 12mm 16mm;
+                padding: 8mm 12mm;
                 width: 210mm;
                 height: 297mm;
             }
@@ -44,20 +44,20 @@
         
         .header {
             text-align: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         
         .name {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 23px;
+            font-weight: 800;
             color: var(--primary);
-            margin: 0 0 3px 0;
-            letter-spacing: -0.03em;
+            margin: 0 0 2px 0;
+            letter-spacing: -0.02em;
         }
         
         .role {
-            font-size: 12.5px;
-            font-weight: 600;
+            font-size: 12px;
+            font-weight: 700;
             color: var(--accent);
             margin: 0 0 8px 0;
             text-transform: uppercase;
@@ -69,30 +69,34 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 14px;
-            font-size: 10.5px;
+            gap: 8px;
+            font-size: 10px;
             color: var(--text-main);
-            margin-bottom: 8px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
+            background: var(--bg-card);
+            padding: 3px 9px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            font-weight: 500;
         }
         
         .contact-item svg {
-            width: 13px;
-            height: 13px;
+            width: 12px;
+            height: 12px;
             fill: none;
-            stroke: var(--text-muted);
+            stroke: var(--accent);
             stroke-width: 2;
             flex-shrink: 0;
         }
         
         .contact-item[data-type="github"] svg,
         .contact-item[data-type="linkedin"] svg {
-            fill: var(--text-muted);
+            fill: var(--accent);
             stroke: none;
         }
         
@@ -103,14 +107,14 @@
         
         .contact-item a:hover {
             color: var(--accent);
-            text-decoration: underline;
         }
         
         .divider {
             border: 0;
-            height: 1px;
-            background: var(--border-light);
-            margin: 0 0 12px 0;
+            height: 2px;
+            background: linear-gradient(90deg, #2563eb 0%, #3b82f6 50%, #e2e8f0 100%);
+            margin: 10px 0 12px 0;
+            border-radius: 2px;
         }
         
         .section {
@@ -119,20 +123,39 @@
         
         .section-title {
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin: 0 0 6px 0;
-            border-bottom: 1.5px solid var(--primary);
-            padding-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        /* Profile Callout Box */
+        [class*="generic-"] .summary-text,
         .summary-text {
-            font-size: 11px;
-            margin: 0;
-            text-align: justify;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            padding: 8px 12px;
+            border-radius: 0 6px 6px 0;
+            font-size: 10.5px;
+            line-height: 1.5;
             color: var(--text-main);
+            margin-bottom: 4px;
+            border-top: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
         
         /* Tech Stack Layout */
@@ -140,20 +163,23 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
+            background: var(--bg-card);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
         }
         
         .tech-category {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 8px;
         }
         
         .tech-category-name {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary);
-            min-width: 120px;
-            font-size: 11px;
-            padding-top: 1px;
+            min-width: 135px;
+            font-size: 10.5px;
         }
         
         .tech-pills {
@@ -163,120 +189,156 @@
         }
         
         .tech-pill {
-            background: var(--bg-pill);
-            color: var(--primary);
-            padding: 1.5px 6px;
-            border-radius: 3px;
-            font-size: 10.5px;
-            font-weight: 500;
+            background: #ffffff;
+            color: #1e40af;
+            border: 1px solid #dbeafe;
+            padding: 1.5px 7px;
+            border-radius: 4px;
+            font-size: 9.5px;
+            font-weight: 600;
         }
         
-        /* Projects Layout */
+        /* Project Cards */
         .projects-list {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 7px;
         }
         
-        .project-item {
-            display: flex;
-            flex-direction: column;
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 8px 12px;
         }
         
         .project-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 2px;
+            align-items: center;
+            margin-bottom: 4px;
         }
         
         .project-title {
-            font-weight: 700;
-            font-size: 12px;
+            font-weight: 800;
+            font-size: 11.5px;
             color: var(--primary);
         }
         
-        .project-tech {
-            font-size: 10.5px;
-            color: var(--accent);
-            font-weight: 600;
+        .project-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
         }
         
-        .project-desc {
-            font-size: 11px;
-            margin: 0 0 2px 0;
+        .proj-badge {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+        
+        .project-bullets {
+            margin: 3px 0 5px 0;
+            padding-left: 14px;
+            font-size: 10.5px;
+        }
+        
+        .project-bullets li {
+            margin-bottom: 2px;
+            color: var(--text-main);
+        }
+        
+        .project-bullets code,
+        .project-card code {
+            background: #e2e8f0;
+            color: #0f172a;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 9.5px;
+            font-family: monospace;
         }
         
         .project-link {
-            font-size: 10px;
-            color: var(--text-muted);
+            font-size: 9.5px;
+            font-weight: 600;
+            color: var(--accent);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 3px;
+            gap: 4px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 2px 8px;
+            border-radius: 4px;
         }
         
         .project-link svg {
             width: 10px;
             height: 10px;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
+            fill: currentColor;
         }
         
         .project-link:hover {
-            color: var(--accent);
-            text-decoration: underline;
+            background: var(--accent);
+            color: white;
         }
         
-        /* Experience Layout */
+        /* Experience */
         .exp-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 8px 12px;
             margin-bottom: 6px;
         }
         
         .exp-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
         
         .exp-role {
-            font-weight: 700;
-            font-size: 12px;
+            font-weight: 800;
+            font-size: 11.5px;
             color: var(--primary);
         }
         
         .exp-meta {
-            font-size: 10.5px;
-            color: var(--text-muted);
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--accent);
         }
         
         .bullets {
-            margin: 2px 0 0 0;
-            padding-left: 16px;
-            font-size: 11px;
+            margin: 3px 0 0 0;
+            padding-left: 14px;
+            font-size: 10.5px;
         }
         
         .bullets li {
             margin-bottom: 2px;
         }
-        
-        /* General content lists */
+
         .simple-list {
             margin: 0;
-            padding-left: 16px;
-            font-size: 11px;
+            padding-left: 14px;
+            font-size: 10.5px;
         }
-        
         .simple-list li {
             margin-bottom: 2px;
         }
         
         /* Education Layout */
         .edu-item {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 8px 12px;
         }
         
         .edu-header {
@@ -286,23 +348,20 @@
         }
         
         .edu-school {
-            font-weight: 700;
-            font-size: 12px;
+            font-weight: 800;
+            font-size: 11.5px;
             color: var(--primary);
         }
         
         .edu-meta {
-            font-size: 10.5px;
-            color: var(--text-muted);
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--accent);
         }
         
         .edu-degree {
-            font-size: 11px;
-        }
-        
-        .availability-text {
-            font-size: 11px;
-            font-weight: 500;
+            font-size: 10.5px;
+            color: var(--text-main);
         }
         
         strong {
@@ -350,6 +409,58 @@
         <h2 class="section-title">🚀 Projekty</h2>
         <div class="projects-list">
 
+        <div class="project-card">
+            <div class="project-header">
+                <span class="project-title">⚡ High-Performance URL Shortener & Analytics Gateway</span>
+                <div class="project-badges"></div>
+            </div>
+            <ul class="project-bullets">
+                <li>*Stack:** <code>Python 3.11</code> | <code>FastAPI</code> | <code>Redis (Sliding Window)</code> | <code>PostgreSQL (SQLAlchemy 2.0)</code> | <code>Docker</code> | <code>Pytest</code></li>
+                <li>Asynchroniczne REST API do skracania linków i analityki kliknięć z algorytmem rate-limitingu w Redis (<code>ZSET</code>).</li>
+                <li>Przekierowania w czasie $O(1)$ dzięki кэшowaniu w Redis z pominięciem zapytania do bazy danych.</li>
+                <li>Nieblokujący worker analityki w tle rejestrujący przeglądarkę, system operacyjny, urządzenie i IP.</li>
+            </ul>
+            
+            <a href="https://github.com/klmtzz/fastapi-url-analytics" class="project-link" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>github.com/klmtzz/fastapi-url-analytics</a>
+        </div>
+        <div class="project-card">
+            <div class="project-header">
+                <span class="project-title">🎭 Pytest & Playwright QA Automation Framework</span>
+                <div class="project-badges"></div>
+            </div>
+            <ul class="project-bullets">
+                <li>*Stack:** <code>Pytest</code> | <code>Playwright (Python)</code> | <code>Page Object Model</code> | <code>Allure</code> | <code>Docker</code></li>
+                <li>Modułowy framework do automatyzacji testów oparty na architekturze Page Object Model (POM).</li>
+                <li>Implementacja Data-Driven Testing (DDT) z markami testowymi (<code>@pytest.mark.smoke</code>, <code>@pytest.mark.regression</code>).</li>
+                <li>Konteneryzowany запуск testów w Dockerze na oficjalnym obrazie Microsoft Playwright.</li>
+            </ul>
+            
+            <a href="https://github.com/klmtzz/pytest-playwright-suite" class="project-link" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>github.com/klmtzz/pytest-playwright-suite</a>
+        </div>
+        <div class="project-card">
+            <div class="project-header">
+                <span class="project-title">🤖 Autonomous Job Search Orchestrator & Data Pipeline</span>
+                <div class="project-badges"></div>
+            </div>
+            <ul class="project-bullets">
+                <li>*Stack:** <code>Python 3.11</code> | <code>AsyncIO</code> | <code>aiogram v3</code> | <code>HTTPX</code> | <code>SQLite</code> | <code>Docker</code></li>
+                <li>Asynchroniczny crawler skanujący równolegle 15+ portali z ofertami pracy z semaforami rate-limit i powiadomieniami na Telegram w czasie rzeczywistym.</li>
+            </ul>
+            
+            <a href="https://github.com/klmtzz/job-hunter-bot" class="project-link" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>github.com/klmtzz/job-hunter-bot</a>
+        </div>
+        <div class="project-card">
+            <div class="project-header">
+                <span class="project-title">🛒 Async Order Processing Microservice</span>
+                <div class="project-badges"></div>
+            </div>
+            <ul class="project-bullets">
+                <li>*Stack:** <code>FastAPI</code> | <code>Async PostgreSQL</code> | <code>Redis</code> | <code>Pytest-asyncio</code> | <code>Docker Compose</code></li>
+                <li>Mikrousługa RESTful z walidacją Pydantic v2, asynchronicznymi sesjami bazy danych (<code>asyncpg</code>), pełnym zestawem testów i docker-compose.</li>
+            </ul>
+            
+            <a href="https://github.com/klmtzz/fastapi-order-service" class="project-link" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>github.com/klmtzz/fastapi-order-service</a>
+        </div>
         </div>
     </div>
 
