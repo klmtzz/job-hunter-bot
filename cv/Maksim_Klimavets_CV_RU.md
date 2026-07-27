@@ -1,0 +1,79 @@
+# Максим Климовец
+
+**Python / AI Integration Engineer | FastAPI & Automation Specialist**
+
+Минск, Беларусь (готов к релокации в Польшу / удаленная работа в ЕС)  
+📧 maxim.klimovets1@gmail.com · 📱 +375 29 594 96 32  
+💻 [github.com/klmtzz](https://github.com/klmtzz) · 💼 [linkedin.com/in/maksim-klimavets-675807310](https://linkedin.com/in/maksim-klimavets-675807310)  
+🇵🇱 **Национальная виза D — полное право на работу в Польше / ЕС**
+
+---
+
+## 🎯 Профессиональный профиль
+
+Заряженный Python-разработчик и специалист по интеграции ИИ. Специализируюсь на создании высокопроизводительных асинхронных микросервисов на **FastAPI**, проектировании шлюзов для LLM (OpenAI API, Claude, AI-агенты) и автоматизации сложных бизнес-процессов. 
+
+Эффективно использую передовой стековый инструментарий (Cursor IDE, AI-assistants) для 5-кратно ускоренной разработки, прототипирования и поставки отказоустойчивого кода. Готов вникать в продуктовые задачи с первого дня и выдавать максимальный результат.
+
+Владею 3 языками (**Английский B2/C1, Польский B2 с сертификатом, Русский родной**). Имею **национальную визу D с правом легальной работы в Польше и ЕС**. Ищу удаленную работу или релокацию: **Python Backend Developer, AI Integration Engineer, Automation Engineer**.
+
+---
+
+## 🛠️ Технологический стек
+
+* **Core & Backend:** Python 3.11+ (AsyncIO, Type Hints), FastAPI, Pydantic v2, SQLAlchemy 2.0 (Async), Redis, REST API, WebSockets, Webhooks, Flask
+* **AI & LLM Integration:** OpenAI API, Claude API, Hyperagent MCP, RAG Architecture, LangChain, Vector DBs (Qdrant, FAISS), Function Calling, Prompt Engineering
+* **Базы данных & Caching:** PostgreSQL, Redis (Sliding Window Rate-Limiting, Pub/Sub, кэширование O(1)), SQLite
+* **DevOps & CI/CD:** Docker, Docker Compose, Git / GitHub Actions, Linux (Bash), Nginx, VPS Deployment
+* **QA & Automation:** Pytest, Asyncio-testing, Playwright, HTTPX, Postman, BeautifulSoup, Scrapy
+
+---
+
+## 🚀 Топовые задеплоенные проекты (GitHub)
+
+### 1. 🤖 Hyperagent → OpenAI-Compatible AI API Gateway
+> **Стек:** `Python 3.11` | `FastAPI` | `OpenAI Wire Spec` | `Hyperagent MCP` | `SSE Streaming` | `Docker`
+> * Асинхронный шлюз API на **FastAPI**, трансформирующий вызовы стандартного OpenAI API (`/v1/chat/completions`) в действия автономных AI-агентов с трансляцией ответа в режиме real-time (SSE).
+> * Реализовал проксирование работы AI-агентов с веб-поиском, исполнением кода и автоматизацией браузера под форматом OpenAI SDK.
+> * Полный деплой в Docker, обработка ошибки подключения и автодокументация OpenAPI.
+> * **GitHub:** [github.com/klmtzz/hyperagent-gateway](https://github.com/klmtzz/hyperagent-gateway)
+
+### 2. ⚡ ChatBuilder → SaaS Platform for RAG-powered AI Agents
+> **Стек:** `Next.js 15` | `TypeScript` | `Supabase (pgvector)` | `NVIDIA AI API (RAG)` | `Stripe` | `Tailwind CSS`
+> * Полнофункциональная SaaS-платформа для создания и автоматического деплоя умных AI-агентов с RAG-поиском по документам.
+> * Семантический векторный поиск на **pgvector** и **NVIDIA NV-EmbedQA**, парсинг документов и внедряемый чат-виджет (Embeddable Widget).
+> * Полный цикл SaaS: **Stripe Billing** (подписки, вебхуки), авторизация Supabase RLS и ограничения тарифов (Multi-tenancy).
+> * **GitHub:** [github.com/klmtzz/chatbot-builder](https://github.com/klmtzz/chatbot-builder)
+
+### 3. 🎯 Autonomous Job Hunter & AI Vacancy Orchestrator
+> **Стек:** `Python 3.11` | `AsyncIO` | `aiogram v3` | `HTTPX` | `LLM API` | `SQLite/PostgreSQL` | `Docker`
+> * Асинхронный пайплайн сбора и фильтрации вакансий в реальном времени с 15+ международная платформ с интеграцией LLM для отбора целевых релевантных позиций.
+> * Реализовал систему алертов и семафоров асинхронного парсинга с доставкой в Telegram.
+> * **GitHub:** [github.com/klmtzz/job-hunter-bot](https://github.com/klmtzz/job-hunter-bot)
+
+---
+
+## 💼 Опыт работы
+
+### Python & AI Integration Engineer | Freelance / Indie Projects
+*2024 – настоящее время*
+* Разработка и деплой микросервисов на **FastAPI** для интеграции нейросетевых API (OpenAI, Claude) и внешней бизнес-логики.
+* Проектирование асинхронных краулеров данных и Telegram-ботов на `aiogram v3` с пропускной способностью в сотни запросов в секунду.
+* Контейнеризация сервисов в **Docker/Docker-Compose**, настройка Nginx и автоматизация развертывания на облачных Linux VPS.
+
+---
+
+## 🎓 Образование
+
+### Белорусский государственный университет информатики и радиоэлектроники (БГУИР)
+*Инженер-Программист (в процессе)* | *2024 – настоящее время* | Минск, Беларусь
+
+---
+
+## 🌐 Языки и разрешения
+
+* 🇵🇱 **Национальная виза D** — Полное право на легальную работу в Польше / ЕС.
+* 🗣️ **Английский:** Выше среднего / Продвинутый (B2/C1) — Свободный письменный и устный.
+* 🗣️ **Польский:** Средний / B2 (Сертификат) — Свободная бизнес-коммуникация.
+* 🗣️ **Русский / Белорусский:** Родной.
+

@@ -1,0 +1,112 @@
+=== LINKEDIN ПРОФИЛЬ — готов к копированию ===
+URL: linkedin.com/in/klmtzz (настрой этот username в Settings)
+
+------------------------------------------------------------
+PROFILE PHOTO: загрузи своё фото (нейтральный фон, лицо видно)
+BACKGROUND: можно стоковое крипто/IT-фото или оставить дефолт
+------------------------------------------------------------
+
+HEADLINE (заголовок — самое важное, копируй):
+
+Customer Support (RU/PL/EN) | Junior Python Developer | Crypto-Native | Open to Work — Remote / Poland
+
+------------------------------------------------------------
+ALT HEADLINE (если хочешь упор на support):
+
+Multilingual Crypto Support Specialist (RU native / PL B2 / EN C1) | Junior Python Dev | Open to Work
+
+------------------------------------------------------------
+ABOUT (раздел "О себе"):
+
+Trilingual support specialist and junior Python developer, crypto-native and ready to contribute from day one.
+
+Languages: Russian (native), Polish (B2, state-certified), English (B2/C1). I can support CIS, EU, and English-speaking customers.
+
+Crypto knowledge: wallets, stablecoins (USDT/USDC), deposits and withdrawals, KYC/AML basics, and how exchanges and derivatives work. I follow the market daily and built my own crypto tools.
+
+Tech background: I build real projects in Python — Telegram bots, REST APIs, and automation systems.
+- Job Hunter Bot: scrapes 15+ job boards in parallel, scores listings, delivers to Telegram
+- Telegram Crypto Bot: real-time prices via CoinGecko API, aiogram, Docker
+- FastAPI Task Manager: REST API with JWT auth, PostgreSQL, pytest, docker-compose
+
+This means I learn internal tools and CRMs fast and can handle technical support tickets confidently.
+
+I hold a Polish National D visa (EU work-eligible). Open to remote work or relocation to Poland. Available for shift work, including nights and weekends. Open to payment in stablecoins.
+
+Currently studying Programming Engineering at BSUIR.
+
+GitHub: github.com/klmtzz
+Email: maxim.klimovets1@gmail.com
+
+Open to: Customer Support, Crypto Support, Junior Python Developer, QA Automation roles.
+
+------------------------------------------------------------
+EXPERIENCE (раздел "Опыт"):
+
+Title: Python Developer (Personal / Freelance Projects)
+Employment type: Self-employed
+Start: 2024 — Present
+Location: Remote
+
+Description:
+Building production-grade Python projects end-to-end:
+- Telegram Crypto Price Bot — real-time market data, async architecture, Docker
+- Job Hunter Bot — multi-source scraper with scoring engine and Telegram delivery
+- FastAPI Task Manager — REST API with JWT auth, PostgreSQL, automated tests
+Tech: Python, FastAPI, aiogram, Docker, PostgreSQL, Git, Linux, REST APIs.
+
+------------------------------------------------------------
+EDUCATION:
+
+School: Belarusian State University of Informatics and Radioelectronics (BSUIR)
+Degree: Programmer-Engineer
+Dates: 2024 — Present
+
+------------------------------------------------------------
+SKILLS (добавь все — минимум 15, LinkedIn ранжирует по ним):
+
+Customer Support · Technical Support · Customer Service · Live Chat Support
+Communication · Multilingual · Russian · Polish · English
+Python · FastAPI · Docker · PostgreSQL · SQL · Git · Linux
+REST APIs · Telegram Bot API · Playwright · pytest · QA Automation
+Cryptocurrency · Blockchain · Web3 · Problem Solving
+
+------------------------------------------------------------
+OPEN TO WORK (настрой в кнопке "Open to work"):
+
+Job titles:
+- Customer Support Specialist
+- Crypto Support Specialist
+- Technical Support Specialist
+- Junior Python Developer
+- QA Automation Engineer
+
+Location types: Remote, On-site
+Locations: Poland (Warsaw, Krakow, Wroclaw), Remote EMEA
+Job types: Full-time, Contract
+Start date: Immediately
+
+------------------------------------------------------------
+FEATURED (закрепи ссылки):
+- github.com/klmtzz (GitHub — My Projects)
+- github.com/klmtzz/telegram-crypto-bot
+- github.com/klmtzz/fastapi-task-manager
+
+------------------------------------------------------------
+CONTACT INFO:
+- Email: maxim.klimovets1@gmail.com
+- Phone: +375 29 594 96 32
+- GitHub: github.com/klmtzz
+- Telegram: @kltmzz   (ПРОВЕРЬ опечатку! GitHub = klmtzz, ты дал TG = kltmzz)
+
+------------------------------------------------------------
+КАК НАСТРОИТЬ (10 минут):
+1. Settings → Edit public profile URL → сделай linkedin.com/in/klmtzz
+2. Вставь Headline и About
+3. Add Experience → Python Developer (Self-employed)
+4. Add Education → BSUIR
+5. Add Skills → все из списка выше
+6. Open to Work → ON, выбери job titles + Poland/Remote
+7. Featured → добавь ссылки на GitHub
+8. Загрузи фото
+9. Locations в Open to Work: Poland + Remote (НЕ Belarus — для крипто-работодателей Poland выглядит лучше)

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Максим Климовец - CV</title>
+    <style>
+        :root {
+            --primary: #0f172a;      /* Slate 900 */
+            --accent: #2563eb;       /* Blue 600 */
+            --text-main: #334155;    /* Slate 700 */
+            --text-muted: #64748b;   /* Slate 500 */
+            --bg-pill: #f1f5f9;      /* Slate 100 */
+            --border: #cbd5e1;       /* Slate 300 */
+            --border-light: #e2e8f0; /* Slate 200 */
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-main);
+            margin: 0;
+            padding: 35px 40px;
+            font-size: 11.5px;
+            line-height: 1.5;
+            background: white;
+            width: 210mm;
+            height: 297mm;
+        }
+        
+        @media print {
+            body {
+                padding: 12mm 16mm;
+                width: 210mm;
+                height: 297mm;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 0 3px 0;
+            letter-spacing: -0.03em;
+        }
+        
+        .role {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        
+        .contacts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            font-size: 10.5px;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .contact-item svg {
+            width: 13px;
+            height: 13px;
+            fill: none;
+            stroke: var(--text-muted);
+            stroke-width: 2;
+            flex-shrink: 0;
+        }
+        
+        .contact-item[data-type="github"] svg,
+        .contact-item[data-type="linkedin"] svg {
+            fill: var(--text-muted);
+            stroke: none;
+        }
+        
+        .contact-item a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .divider {
+            border: 0;
+            height: 1px;
+            background: var(--border-light);
+            margin: 0 0 12px 0;
+        }
+        
+        .section {
+            margin-bottom: 12px;
+        }
+        
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 0 0 6px 0;
+            border-bottom: 1.5px solid var(--primary);
+            padding-bottom: 2px;
+        }
+        
+        .summary-text {
+            font-size: 11px;
+            margin: 0;
+            text-align: justify;
+            color: var(--text-main);
+        }
+        
+        /* Tech Stack Layout */
+        .tech-list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .tech-category {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .tech-category-name {
+            font-weight: 600;
+            color: var(--primary);
+            min-width: 120px;
+            font-size: 11px;
+            padding-top: 1px;
+        }
+        
+        .tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        
+        .tech-pill {
+            background: var(--bg-pill);
+            color: var(--primary);
+            padding: 1.5px 6px;
+            border-radius: 3px;
+            font-size: 10.5px;
+            font-weight: 500;
+        }
+        
+        /* Projects Layout */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .project-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+        
+        .project-title {
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--primary);
+        }
+        
+        .project-tech {
+            font-size: 10.5px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .project-desc {
+            font-size: 11px;
+            margin: 0 0 2px 0;
+        }
+        
+        .project-link {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
+        
+        .project-link svg {
+            width: 10px;
+            height: 10px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+        
+        .project-link:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        /* Experience Layout */
+        .exp-item {
+            margin-bottom: 6px;
+        }
+        
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2px;
+        }
+        
+        .exp-role {
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--primary);
+        }
+        
+        .exp-meta {
+            font-size: 10.5px;
+            color: var(--text-muted);
+        }
+        
+        .bullets {
+            margin: 2px 0 0 0;
+            padding-left: 16px;
+            font-size: 11px;
+        }
+        
+        .bullets li {
+            margin-bottom: 2px;
+        }
+        
+        /* General content lists */
+        .simple-list {
+            margin: 0;
+            padding-left: 16px;
+            font-size: 11px;
+        }
+        
+        .simple-list li {
+            margin-bottom: 2px;
+        }
+        
+        /* Education Layout */
+        .edu-item {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+        
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        
+        .edu-school {
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--primary);
+        }
+        
+        .edu-meta {
+            font-size: 10.5px;
+            color: var(--text-muted);
+        }
+        
+        .edu-degree {
+            font-size: 11px;
+        }
+        
+        .availability-text {
+            font-size: 11px;
+            font-weight: 500;
+        }
+        
+        strong {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="name">Максим Климовец</h1>
+        <div class="role">Python / AI Integration Engineer | FastAPI & Automation Specialist</div>
+        <div class="contacts">
+            <span class="contact-item" data-type="location"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Минск, Беларусь (готов к релокации в Польшу / удаленная работа в ЕС)</span></span>
+<span class="contact-item" data-type="email"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="mailto:maxim.klimovets1@gmail.com" target="_blank">maxim.klimovets1@gmail.com</a></span>
+<span class="contact-item" data-type="phone"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h2.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.252.834L7.09 7.49a15.11 15.11 0 006.422 6.422l1.248-1.248a1 1 0 01.834-.253l2.2.549a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+375295949632" target="_blank">+375 29 594 96 32</a></span>
+<span class="contact-item" data-type="github"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><a href="https://[github.com/klmtzz](https://github.com/klmtzz)" target="_blank">[github.com/klmtzz](https://github.com/klmtzz)</a></span>
+<span class="contact-item" data-type="linkedin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg><a href="https://[linkedin.com/in/maksim-klimavets-675807310](https://linkedin.com/in/maksim-klimavets-675807310)" target="_blank">[linkedin.com/in/maksim-klimavets-675807310](https://linkedin.com/in/maksim-klimavets-675807310)</a></span>
+<span class="contact-item" data-type="visa"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Национальная виза D — полное право на работу в Польше / ЕС</span></span>
+
+        </div>
+    </div>
+    
+    <hr class="divider">
+    
+    <div class="content">
+            <div class="section generic-🎯-профессиональный-профиль">
+        <h2 class="section-title">🎯 Профессиональный профиль</h2>
+        <p class="summary-text">Заряженный Python-разработчик и специалист по интеграции ИИ. Специализируюсь на создании высокопроизводительных асинхронных микросервисов на <strong>FastAPI</strong>, проектировании шлюзов для LLM (OpenAI API, Claude, AI-агенты) и автоматизации сложных бизнес-процессов.</p>
+        <p class="summary-text">Эффективно использую передовой стековый инструментарий (Cursor IDE, AI-assistants) для 5-кратно ускоренной разработки, прототипирования и поставки отказоустойчивого кода. Готов вникать в продуктовые задачи с первого дня и выдавать максимальный результат.</p>
+        <p class="summary-text">Владею 3 языками (<strong>Английский B2/C1, Польский B2 с сертификатом, Русский родной</strong>). Имею <strong>национальную визу D с правом легальной работы в Польше и ЕС</strong>. Ищу удаленную работу или релокацию: <strong>Python Backend Developer, AI Integration Engineer, Automation Engineer</strong>.</p>
+    </div>
+
+    <div class="section generic-🛠️-технологический-стек">
+        <h2 class="section-title">🛠️ Технологический стек</h2>
+        <ul class="simple-list">
+            <li><strong>Core & Backend:</strong> Python 3.11+ (AsyncIO, Type Hints), FastAPI, Pydantic v2, SQLAlchemy 2.0 (Async), Redis, REST API, WebSockets, Webhooks, Flask</li>
+            <li><strong>AI & LLM Integration:</strong> OpenAI API, Claude API, Hyperagent MCP, RAG Architecture, LangChain, Vector DBs (Qdrant, FAISS), Function Calling, Prompt Engineering</li>
+            <li><strong>Базы данных & Caching:</strong> PostgreSQL, Redis (Sliding Window Rate-Limiting, Pub/Sub, кэширование O(1)), SQLite</li>
+            <li><strong>DevOps & CI/CD:</strong> Docker, Docker Compose, Git / GitHub Actions, Linux (Bash), Nginx, VPS Deployment</li>
+            <li><strong>QA & Automation:</strong> Pytest, Asyncio-testing, Playwright, HTTPX, Postman, BeautifulSoup, Scrapy</li>
+        </ul>
+    </div>
+
+    <div class="section projects">
+        <h2 class="section-title">🚀 Топовые задеплоенные проекты (GitHub)</h2>
+        <div class="projects-list">
+
+        </div>
+    </div>
+
+    <div class="section experience">
+        <h2 class="section-title">💼 Опыт работы</h2>
+        <p class="summary-text">### Python & AI Integration Engineer | Freelance / Indie Projects</p>
+        <p class="summary-text">*2024 – настоящее время*</p>
+        <p class="summary-text">* Разработка и деплой микросервисов на **FastAPI** для интеграции нейросетевых API (OpenAI, Claude) и внешней бизнес-логики.</p>
+        <p class="summary-text">* Проектирование асинхронных краулеров данных и Telegram-ботов на `aiogram v3` с пропускной способностью в сотни запросов в секунду.</p>
+        <p class="summary-text">* Контейнеризация сервисов в **Docker/Docker-Compose**, настройка Nginx и автоматизация развертывания на облачных Linux VPS.</p>
+    </div>
+
+    <div class="section education">
+        <h2 class="section-title">🎓 Образование</h2>
+        <p class="summary-text">### Белорусский государственный университет информатики и радиоэлектроники (БГУИР)</p>
+        <p class="summary-text">*Инженер-Программист (в процессе)* | *2024 – настоящее время* | Минск, Беларусь</p>
+    </div>
+
+    <div class="section generic-🌐-языки-и-разрешения">
+        <h2 class="section-title">🌐 Языки и разрешения</h2>
+        <ul class="simple-list">
+            <li>🇵🇱 <strong>Национальная виза D</strong> — Полное право на легальную работу в Польше / ЕС.</li>
+            <li>🗣️ <strong>Английский:</strong> Выше среднего / Продвинутый (B2/C1) — Свободный письменный и устный.</li>
+            <li>🗣️ <strong>Польский:</strong> Средний / B2 (Сертификат) — Свободная бизнес-коммуникация.</li>
+            <li>🗣️ <strong>Русский / Белорусский:</strong> Родной.</li>
+        </ul>
+    </div>
+
+
+    </div>
+</body>
+</html>
