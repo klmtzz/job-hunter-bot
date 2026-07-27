@@ -23,19 +23,25 @@
             font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
             color: var(--text-main);
             margin: 0;
-            padding: 25px 32px;
-            font-size: 11px;
-            line-height: 1.48;
+            padding: 16px 24px;
+            font-size: 9.8px;
+            line-height: 1.36;
             background: white;
             width: 210mm;
-            height: 297mm;
+            box-sizing: border-box;
         }
         
         @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0mm;
+            }
             body {
-                padding: 8mm 12mm;
+                padding: 7mm 10mm;
                 width: 210mm;
                 height: 297mm;
+                max-height: 297mm;
+                overflow: hidden;
             }
             .no-print {
                 display: none;
@@ -44,24 +50,24 @@
         
         .header {
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
         
         .name {
-            font-size: 23px;
+            font-size: 20px;
             font-weight: 800;
             color: var(--primary);
-            margin: 0 0 2px 0;
+            margin: 0 0 1px 0;
             letter-spacing: -0.02em;
         }
         
         .role {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: var(--accent);
-            margin: 0 0 8px 0;
+            margin: 0 0 6px 0;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.05em;
         }
         
         .contacts {
@@ -69,25 +75,25 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 8px;
-            font-size: 10px;
+            gap: 6px;
+            font-size: 9.5px;
             color: var(--text-main);
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             background: var(--bg-card);
-            padding: 3px 9px;
-            border-radius: 12px;
+            padding: 2px 7px;
+            border-radius: 10px;
             border: 1px solid var(--border);
             font-weight: 500;
         }
         
         .contact-item svg {
-            width: 12px;
-            height: 12px;
+            width: 11px;
+            height: 11px;
             fill: none;
             stroke: var(--accent);
             stroke-width: 2;
@@ -105,39 +111,36 @@
             text-decoration: none;
         }
         
-        .contact-item a:hover {
-            color: var(--accent);
-        }
-        
         .divider {
             border: 0;
             height: 2px;
             background: linear-gradient(90deg, #2563eb 0%, #3b82f6 50%, #e2e8f0 100%);
-            margin: 10px 0 12px 0;
+            margin: 6px 0 8px 0;
             border-radius: 2px;
         }
         
         .section {
-            margin-bottom: 12px;
+            margin-bottom: 8px;
+            page-break-inside: avoid;
         }
         
         .section-title {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 800;
             color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin: 0 0 6px 0;
+            letter-spacing: 0.06em;
+            margin: 0 0 4px 0;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
         
         .section-title::before {
             content: "";
             display: inline-block;
-            width: 4px;
-            height: 12px;
+            width: 3.5px;
+            height: 11px;
             background: var(--accent);
             border-radius: 2px;
         }
@@ -147,12 +150,12 @@
         .summary-text {
             background: var(--bg-card);
             border-left: 3px solid var(--accent);
-            padding: 8px 12px;
-            border-radius: 0 6px 6px 0;
-            font-size: 10.5px;
-            line-height: 1.5;
+            padding: 6px 10px;
+            border-radius: 0 5px 5px 0;
+            font-size: 9.5px;
+            line-height: 1.4;
             color: var(--text-main);
-            margin-bottom: 4px;
+            margin: 0 0 3px 0;
             border-top: 1px solid var(--border);
             border-right: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
@@ -162,39 +165,39 @@
         .tech-list {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 4px;
             background: var(--bg-card);
-            padding: 8px 12px;
-            border-radius: 6px;
+            padding: 6px 10px;
+            border-radius: 5px;
             border: 1px solid var(--border);
         }
         
         .tech-category {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         
         .tech-category-name {
             font-weight: 700;
             color: var(--primary);
-            min-width: 135px;
-            font-size: 10.5px;
+            min-width: 125px;
+            font-size: 9.5px;
         }
         
         .tech-pills {
             display: flex;
             flex-wrap: wrap;
-            gap: 4px;
+            gap: 3px;
         }
         
         .tech-pill {
             background: #ffffff;
             color: #1e40af;
             border: 1px solid #dbeafe;
-            padding: 1.5px 7px;
-            border-radius: 4px;
-            font-size: 9.5px;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 9px;
             font-weight: 600;
         }
         
@@ -202,26 +205,27 @@
         .projects-list {
             display: flex;
             flex-direction: column;
-            gap: 7px;
+            gap: 5px;
         }
         
         .project-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 8px 12px;
+            border-radius: 5px;
+            padding: 6px 10px;
+            page-break-inside: avoid;
         }
         
         .project-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
         
         .project-title {
             font-weight: 800;
-            font-size: 11.5px;
+            font-size: 10.5px;
             color: var(--primary);
         }
         
@@ -235,20 +239,20 @@
             background: #eff6ff;
             color: #1d4ed8;
             border: 1px solid #bfdbfe;
-            font-size: 9px;
+            font-size: 8.5px;
             font-weight: 700;
-            padding: 1px 5px;
+            padding: 0.5px 4px;
             border-radius: 3px;
         }
         
         .project-bullets {
-            margin: 3px 0 5px 0;
-            padding-left: 14px;
-            font-size: 10.5px;
+            margin: 2px 0 3px 0;
+            padding-left: 13px;
+            font-size: 9.5px;
         }
         
         .project-bullets li {
-            margin-bottom: 2px;
+            margin-bottom: 1.5px;
             color: var(--text-main);
         }
         
@@ -256,89 +260,87 @@
         .project-card code {
             background: #e2e8f0;
             color: #0f172a;
-            padding: 1px 4px;
-            border-radius: 3px;
-            font-size: 9.5px;
+            padding: 0.5px 3px;
+            border-radius: 2px;
+            font-size: 9px;
             font-family: monospace;
         }
         
         .project-link {
-            font-size: 9.5px;
+            font-size: 9px;
             font-weight: 600;
             color: var(--accent);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 3px;
             background: #ffffff;
             border: 1px solid var(--border);
-            padding: 2px 8px;
-            border-radius: 4px;
+            padding: 1.5px 6px;
+            border-radius: 3px;
         }
         
         .project-link svg {
-            width: 10px;
-            height: 10px;
+            width: 9px;
+            height: 9px;
             fill: currentColor;
-        }
-        
-        .project-link:hover {
-            background: var(--accent);
-            color: white;
         }
         
         /* Experience */
         .exp-item {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 8px 12px;
-            margin-bottom: 6px;
+            border-radius: 5px;
+            padding: 6px 10px;
+            margin-bottom: 4px;
+            page-break-inside: avoid;
         }
         
         .exp-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 3px;
+            align-items: baseline;
+            margin-bottom: 2px;
         }
         
         .exp-role {
             font-weight: 800;
-            font-size: 11.5px;
+            font-size: 10.5px;
             color: var(--primary);
         }
         
         .exp-meta {
-            font-size: 10px;
+            font-size: 9.5px;
             font-weight: 600;
             color: var(--accent);
         }
         
         .bullets {
-            margin: 3px 0 0 0;
-            padding-left: 14px;
-            font-size: 10.5px;
+            margin: 2px 0 0 0;
+            padding-left: 13px;
+            font-size: 9.5px;
         }
         
         .bullets li {
-            margin-bottom: 2px;
+            margin-bottom: 1.5px;
         }
 
         .simple-list {
             margin: 0;
-            padding-left: 14px;
-            font-size: 10.5px;
+            padding-left: 13px;
+            font-size: 9.5px;
         }
         .simple-list li {
-            margin-bottom: 2px;
+            margin-bottom: 1.5px;
         }
         
         /* Education Layout */
         .edu-item {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 8px 12px;
+            border-radius: 5px;
+            padding: 6px 10px;
+            page-break-inside: avoid;
         }
         
         .edu-header {
@@ -349,18 +351,18 @@
         
         .edu-school {
             font-weight: 800;
-            font-size: 11.5px;
+            font-size: 10.5px;
             color: var(--primary);
         }
         
         .edu-meta {
-            font-size: 10px;
+            font-size: 9.5px;
             font-weight: 600;
             color: var(--accent);
         }
         
         .edu-degree {
-            font-size: 10.5px;
+            font-size: 9.5px;
             color: var(--text-main);
         }
         
@@ -452,18 +454,29 @@
 
     <div class="section experience">
         <h2 class="section-title">💼 Опыт работы</h2>
-        <p class="summary-text">### Python & AI Integration Engineer | Freelance / Indie Projects</p>
-        <p class="summary-text">*2024 – настоящее время*</p>
-        <p class="summary-text">* Разработка и деплой микросервисов на **FastAPI** для интеграции нейросетевых API (OpenAI, Claude) и внешней бизнес-логики.</p>
-        <p class="summary-text">* Проектирование асинхронных краулеров данных и Telegram-ботов на `aiogram v3` с пропускной способностью в сотни запросов в секунду.</p>
-        <p class="summary-text">* Контейнеризация сервисов в **Docker/Docker-Compose**, настройка Nginx и автоматизация развертывания на облачных Linux VPS.</p>
-    </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <span class="exp-role">Python & AI Integration Engineer</span>
+                <span class="exp-meta">Freelance / Indie Projects &bull; 2024 – настоящее время</span>
+            </div>
+            <ul class="bullets">
+                <li>Разработка и деплой микросервисов на **FastAPI** для интеграции нейросетевых API (OpenAI, Claude) и внешней бизнес-логики.</li>
+                <li>Проектирование асинхронных краулеров данных и Telegram-ботов на `aiogram v3` с пропускной способностью в сотни запросов в секунду.</li>
+                <li>Контейнеризация сервисов в **Docker/Docker-Compose**, настройка Nginx и автоматизация развертывания на облачных Linux VPS.</li>
+            </ul>
+        </div>    </div>
 
     <div class="section education">
         <h2 class="section-title">🎓 Образование</h2>
-        <p class="summary-text">### Белорусский государственный университет информатики и радиоэлектроники (БГУИР)</p>
-        <p class="summary-text">*Инженер-Программист (в процессе)* | *2024 – настоящее время* | Минск, Беларусь</p>
-    </div>
+
+        <div class="edu-item">
+            <div class="edu-header">
+                <span class="edu-school">Белорусский государственный университет информатики и радиоэлектроники (БГУИР)</span>
+                <span class="edu-meta">Минск, Беларусь &bull; 2024 – настоящее время</span>
+            </div>
+            <div class="edu-degree">Инженер-Программист (в процессе)</div>
+        </div>    </div>
 
     <div class="section generic-🌐-языки-и-разрешения">
         <h2 class="section-title">🌐 Языки и разрешения</h2>
